@@ -19,3 +19,12 @@ Para este ejemplo se utilizará el gestor de bases de datos [SQLite3](https://ww
 ```sql
 X-CREATE TABLE...
 ```
+CREATE TABLE contactos (
+    id_contacto INT AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    primer_apellido VARCHAR(30),
+    segundo_apellido VARCHAR(30),
+    email VARCHAR(50),
+    telefono VARCHAR(13),
+    PRIMARY KEY (id_contacto)
+);
