@@ -11,7 +11,7 @@ Para este ejemplo se utilizará el gestor de bases de datos [SQLite3](https://ww
 
 
 |NO.|Campo|Tipo|Restricciones|
-|--|--|--|--|--|
+|--|--|--|--|
 |1|id_contactos|int|PRIMARY KEY|Llave primaria de la tabla|
 
 ## 3.2 SCRIPT
@@ -21,10 +21,22 @@ X-CREATE TABLE...
 ```
 CREATE TABLE contactos (
     id_contacto INT AUTO_INCREMENT NOT NULL,
-    nombre VARCHAR(50) NOT NULL,
-    primer_apellido VARCHAR(30),
-    segundo_apellido VARCHAR(30),
-    email VARCHAR(50),
-    telefono VARCHAR(13),
+    nombre             VARCHAR(50) NOT NULL,
+    primer_apellido    VARCHAR(30) NOT NULL,
+    segundo_apellido   VARCHAR(30) NOT NULL,
+    email              VARCHAR(50) NOT NULL,
+    telefono           VARCHAR(13) NOT NULL,
     PRIMARY KEY (id_contacto)
 );
+
+TABLA DE CONTACTOS
+|Campo|Tipo|Restriciones|
+|--|--|--|
+| id_contacto|INT AUTO_INCREMENT|NOT NULL|
+|nombre|VARCHAR(50)|NOT NULL|
+|primer_apellido|VARCHAR(30)|NOT NULL|
+|segundo_apellido|VARCHAR(30)|NOT NULL|
+|email|VARCHAR(50)|NOT NULL|
+|telefono|VARCHAR(13)|NOT NULL|
+|--|--|PRIMARY KEY (id_contacto)
+
