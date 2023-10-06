@@ -1,5 +1,5 @@
-import csv
 import json
+import csv
 from fastapi import FastAPI
 from fastapi import status
 from fastapi.responses import JSONResponse
@@ -14,7 +14,7 @@ async def root():
     return {"Hello": "World"}
 
 
-@app.get("/v1/contactos")   
+@app.get("/v1/contactos")
 async def contactos():
     with open("contactos.csv", mode="r", newline="") as file:
         csv_reader = csv.DictReader(file)
@@ -22,3 +22,12 @@ async def contactos():
         contactos_json = json.dumps(contactos)
         response = JSONResponse(content=contactos_json)
     return response
+
+
+contactos = []
+
+@app.post("/items")
+async def crear_item(nombre: str):
+    nuevo_contacto = {"nombre": nombre}
+    contactos.append(nuevo_contacto)
+    return {"mensaje": "Contacto creado exitosamente"}
